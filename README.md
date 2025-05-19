@@ -1,2 +1,117 @@
-# Website-Proposal
-Website Design 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>First-Time Farmers - Navigation Menu</title>
+    <style>
+        /* Basic styling for navigation bar */
+         body {
+            font-family: Arial, sans-serif;
+            margin:0;
+            padding:0;
+        }
+        nav {
+            background-color: #333;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav li {
+            position: relative;
+        }
+        nav > ul > li {
+            flex: 1;
+        }
+        nav a {
+            display: block;
+            color: white;
+            padding: 14px 16px;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+        }
+        nav a:hover, nav li:hover > a {
+            background-color: #575757;
+        }
+        /* Dropdown menu styles */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            top: 100%;
+            left: 0;
+            z-index: 1000;
+        }
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 16px;
+            text-align: left;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        /* Show dropdown on hover */
+        li.dropdown:hover .dropdown-content {
+            display: block;
+        }
+        /* Center page content */
+        .content {
+            padding: 20px;
+            max-width: 600px;
+            margin: 40px auto;
+            text-align: center;
+            font-size: 22px;
+            color: #cc0000;
+            font-weight: bold;
+            font-family: "Arial", sans-serif;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li class="dropdown">
+            <a href="#">About Us &#9662;</a>
+            <div class="dropdown-content">
+                <a href="under-construction.html?section=our-story">Our Story</a>
+                <a href="under-construction.html?section=team">Team</a>
+                <a href="under-construction.html?section=careers">Careers</a>
+                <a href="under-construction.html?section=mission">Mission & Vision</a>
+            </div>
+        </li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
+<div class="content" id="page-content">
+    <!-- Content will be replaced by JavaScript -->
+</div>
+<script>
+    // Simple JavaScript to show "Under Construction" based on URL parameter
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+    const section = getQueryParam('section');
+    const contentDiv = document.getElementById('page-content');
+    if(section) {
+        // If visiting under-construction.html?section=..., display under construction message
+        contentDiv.textContent = `The page for '${section.replace(/-/g, ' ')}' is Under Construction`;
+    } else {
+        contentDiv.textContent = "Welcome to the First Time Farmers Homepage!";
+    }
+</script>
+</body>
+
+</html>
