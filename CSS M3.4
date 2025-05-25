@@ -1,0 +1,92 @@
+/* Site-wide CSS: fonts and color scheme */
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Merriweather:wght@400;700&display=swap');
+
+:root {
+  /* Color Palette */
+  --color-primary: #2f6f4e;       /* Deep Green - main brand color */
+  --color-secondary: #a3c293;     /* Light Green - highlights, buttons */
+  --color-accent: #f4ae42;        /* Warm Yellow/Orange - accents & CTAs */
+  --color-background: #fafaf4;    /* Soft Off-White - page backgrounds */
+  --color-surface: #ffffff;       /* White - content backgrounds */
+  --color-text-primary: #2e2e2e;  /* Dark Gray - primary text */
+  --color-text-secondary: #555a43;/* Muted Dark Green - secondary text */
+  --color-link: var(--color-primary);
+  --color-link-hover: var(--color-accent);
+}
+
+/* Base Style */
+html {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Merriweather', serif;
+  color: var(--color-primary);
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+/* Paragraphs */
+p {
+  color: var(--color-text-secondary);
+  margin-bottom: 1rem;
+}
+
+/* Links */
+a {
+  color: var(--color-link);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover, a:focus {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+}
+
+/* Backgrounds */
+body, main, section, article {
+  background-color: var(--color-background);
+}
+
+.container {
+  background-color: var(--color-surface);
+  padding: 1.5rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Buttons (example) */
+button, .btn {
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover, .btn:hover {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+/* Utility classes */
+.text-center {
+  text-align: center;
+}

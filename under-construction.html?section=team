@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Our Team - Veteran First-Time Farmers</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      margin: 0;
+      padding: 0 20px;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #2e7d32;
+      color: white;
+      padding: 20px 10px;
+      text-align: center;
+    }
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px 40px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      margin-top: 0;
+      color: #2e7d32;
+      text-align: center;
+    }
+    .team-member {
+      border-bottom: 1px solid #ddd;
+      padding: 20px 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .team-member:last-child {
+      border-bottom: none;
+    }
+    .name {
+      font-size: 1.3em;
+      font-weight: bold;
+      color: #1b5e20;
+    }
+    .title {
+      font-style: italic;
+      margin: 5px 0 10px 0;
+      color: #4caf50;
+    }
+    .bio {
+      font-size: 1em;
+      line-height: 1.4;
+    }
+    @media (min-width: 600px) {
+      .team-member {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .bio {
+        max-width: 70%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Our Team</h1>
+  </header>
+  <light><main> </light>
+    <section class="team-member">
+      <div>
+        <div class="name">Jane Doe</div>
+        <div class="title">Founder &amp; Veteran Advocate</div>
+      </div>
+      <p class="bio">
+        With over a 20 years of service in the military and a passion for sustainable agriculture, Jane leads our mission to create pathways for veterans to thrive in farming.
+      </p>
+    </section>
+
+    <section class="team-member">
+      <div>
+        <div class="name">Joevarie Massey</div>
+        <div class="title">Agricultural Specialist</div>
+      </div>
+      <p class="bio">
+        Joevarie brings extensive experience in agribusiness and veteran outreach programs, helping our members access resources and training tailored to their needs.
+      </p>
+    </section>
+
+    <section class="team-member">
+      <div>
+        <div class="name">Tiffany Massey</div>
+        <div class="title">Community Coordinator</div>
+      </div>
+      <p class="bio">
+        Tiffany supports veteran farmers through educational events, networking opportunities, and mental health resources to foster a strong and supportive community.
+      </p>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Careers - Veteran First-Time Farmers</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color:rgb(165, 137, 137);
+      color: #333;
+      margin: 0;
+      padding: 0 20px;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #2e7d32;
+      color: white;
+      padding: 20px 10px;
+      text-align: center;
+    }
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px 40px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      margin-top: 0;
+      color:rgb(108, 125, 109);
+      text-align: center;
+    }
+    section {
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #4caf50;
+      margin-bottom: 10px;
+      font-size: 1.4em;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    a.apply-button {
+      display: inline-block;
+      background-color: #2e7d32;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    a.apply-button:hover {
+      background-color: #1b5e20;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Careers</h1>
+  </header>
+  <main>
+    <section>
+      <p>
+        <light>Transform your military skills into a rewarding career in agriculture. </light> Whether you’re interested in crop farming, ranching, urban agriculture, or agricultural entrepreneurship, we provide training, resources, and job placement support tailored specifically for veterans.
+      </p>
+    </section>
+
+    <section>
+      <h2>Current Opportunities</h2>
+      <ul>
+        <li><strong>Apprenticeship Program:</strong> Gain hands-on experience working with experienced farmers and agribusiness professionals.</li>
+        <li><strong>Fellowship Program:</strong> Engage in advanced agricultural projects with mentorship and financial support.</li>
+        <li><strong>Entry-Level Farm Technicians:</strong> Join local farms working in planting, harvesting, and farm maintenance.</li>
+        <li><strong>Urban Agriculture Coordinator:</strong> Lead community farming initiatives and urban garden programs.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>How to Apply</h2>
+      <p>If you’re ready to start your farming career, please send your resume and a brief cover letter detailing your interest and experience to <a href="mailto:careers@veteranfarmers.org">careers@veteranfarmers.org</a>.</p>
+      <p>We encourage veterans from all branches and backgrounds to apply. Let's grow your future together!</p>
+      <a href="mailto:careers@veteranfarmers.org" class="apply-button">Apply Now</a>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us - Veteran First-Time Farmers</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color:rgba(23, 65, 30, 0.75);
+      color: #333;
+      margin: 0;
+      padding: 0 20px;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #2e7d32;
+      color: white;
+      padding: 20px 10px;
+      text-align: center;
+    }
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px 40px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      margin-top: 0;
+      color: #2e7d32;
+    }
+    p {
+      font-size: 1.1em;
+    }
+    @media (max-width: 600px) {
+      main {
+        padding: 20px;
+        margin: 20px auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>About Us</h1>
+  </header>
+  <main>
+    <p>
+      Welcome to <strong>Veterans First-Time Farmers</strong>, a dedicated resource connecting military veterans with opportunities, training, and support to start their journey in agriculture. <light>Our mission is to empower veterans by providing access to farming resources, education, and community, enabling a successful transition from military service to farming life. </light>
+    </p>
+    <p>
+      We understand the unique strengths and challenges veterans face when transitioning to civilian life. Through education, mentorship, and tailored programs, we help veterans harness their skills, discipline, and passion to build rewarding, sustainable careers in farming.
+    </p>
+    <p>
+      Join us as we cultivate hope, growth, and new beginnings for those who have served our country. Together, we grow futures rooted in the soil – and in community.
+    </p>
+  </main>
+</body>
+</html>
