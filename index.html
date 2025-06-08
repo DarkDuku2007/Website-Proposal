@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>First-Time Farmers - Navigation Menu</title>
     <style>
+          /* Fonts & color scheme */
+
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Merriweather:wght@400;700&display=swap');
+
         /* Basic styling for navigation bar */
          body {
             font-family: Arial, sans-serif;
@@ -110,6 +114,140 @@
       margin: 0;
       line-height: 1.4;
     }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #fafaf4;
+      color: #2e2e2e;
+      margin: 20px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    h1, h2 {
+      font-family: 'Merriweather', serif;
+      color: #2f6f4e;
+      text-align: center;
+    }
+    /* Button styles */
+    button {
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 12px 24px;
+      background-color: #2f6f4e;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin: 10px 0;
+      display: block;
+      width: 200px;
+    }
+    /* Color change on hover */
+    button:hover {
+      background-color: #f4ae42;
+      color: #222;
+    }
+    /* Info box shown on button press */
+    #infoBox {
+      margin: 15px 0;
+      padding: 15px;
+      background-color: #ffffff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 6px;
+      display: none;
+    }
+    /* Timer/alarm styles */
+    #timer {
+      font-size: 2rem;
+      color: #a34f41;
+      font-weight: 700;
+      text-align: center;
+      margin: 15px 0;
+    }
+    /* Audio & video container */
+    .media-container {
+      margin: 20px 0;
+      text-align: center;
+    }
+    video, audio {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 900px;
+      position: relative;
+      margin: 30px auto;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      background-color: white;
+      overflow: hidden;
+    }
+    /* Slides */
+    .mySlides {
+      display: none;
+      position: relative;
+      text-align: center;
+    }
+    .mySlides img {
+      width: 100%;
+      border-radius: 8px 8px 0 0;
+      max-height: 400px;
+      object-fit: cover;
+    }
+    /* Caption text */
+    .caption {
+      padding: 12px 16px;
+      font-size: 1.2rem;
+      font-family: 'Merriweather', serif;
+      color: #2f6f4e;
+    }
+    /* Next & previous buttons */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      margin-top: -22px;
+      padding: 16px;
+      color: #2f6f4e;
+      font-weight: bold;
+      font-size: 24px;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      transition: background-color 0.3s ease;
+    }
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+    .prev:hover, .next:hover {
+      background-color: #f4ae42;
+      color: #222;
+    }
+    /* Dots container */
+    .dots-container {
+      text-align: center;
+      padding: 15px 0;
+      background-color: #fafaf4;
+      border-radius: 0 0 8px 8px;
+    }
+    /* The dots/bullets */
+    .dot {
+      cursor: pointer;
+      height: 14px;
+      width: 14px;
+      margin: 0 5px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+    .active, .dot:hover {
+      background-color: #2f6f4e;
+    }
     </style>
 </head>
 <body>
@@ -148,5 +286,131 @@
     }
 </script>
 </body>
+<h1>Veterans First Time Farmers Showcase</h1>
+  <!-- Button to show information -->
+  <button id="showInfoBtn" aria-expanded="false" aria-controls="infoBox">Show About Veterans First Time Farmers</button>
+  <section id="infoBox" aria-live="polite">
+    <p>Veterans First Time Farmers programs provide education, resources, and community support tailored to military veterans starting careers in agriculture. These efforts help transition veterans into sustainable farming with mentorship, funding, and training.</p>
+  </section>
+  <!-- Timer / Alarm -->
+  <h2>Countdown Timer (Alarm)</h2>
+  <div id="timer">00:10</div>
+  <button id="startTimerBtn">Start 10-Second Timer</button>
+  <!-- Audio Section -->
+  <h2>Inspirational Audio</h2>
+  <div class="media-container">
+    <audio controls>
+      <source src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg" type="audio/ogg" />
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+  <!-- Video Section -->
+  <h2>Informative Video</h2>
+  <div class="media-container">
+    <video controls width="600" preload="metadata" poster="https://farmvetco.org/wp-content/uploads/2019/10/FVC_LOGO.png">
+      <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm" />
+      <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <!-- Slideshow -->
+  <h2>Veterans First Time Farmers Slideshow</h2>
+  <div class="slideshow-container" aria-label="Image slideshow about Veterans First Time Farmers">
+    <div class="mySlides fade">
+      <img src="https://farmvetco.org/wp-content/uploads/2019/08/veteran-farmer.jpg" alt="Veteran farmer working on field" />
+      <div class="caption">Veteran Farmer Tending the Land</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="https://farmvetco.org/wp-content/uploads/2019/06/veteran_workshop_3.jpg" alt="Veterans participating in farming workshop" />
+      <div class="caption">Veterans Participating in Farming Workshop</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="https://farmvetco.org/wp-content/uploads/2019/05/farm-veteran-resources.jpg" alt="Resources for veteran farmers" />
+      <div class="caption">Support & Resources for Veteran Farmers</div>
+    </div>
+    <!-- Navigation Arrows -->
+    <a class="prev" role="button" aria-label="Previous Slide">&#10094;</a>
+    <a class="next" role="button" aria-label="Next Slide">&#10095;</a>
+  </div>
+  <!-- Dots -->
+  <div class="dots-container" role="tablist" aria-label="Slideshow navigation dots">
+    <span class="dot" role="tab" tabindex="0" aria-selected="true" aria-controls="slide1" id="tab1"></span>
+    <span class="dot" role="tab" tabindex="-1" aria-selected="false" aria-controls="slide2" id="tab2"></span>
+    <span class="dot" role="tab" tabindex="-1" aria-selected="false" aria-controls="slide3" id="tab3"></span>
+  </div>
+<script>
+  // Show/Hide info on button click
+  const showInfoBtn = document.getElementById('showInfoBtn');
+  const infoBox = document.getElementById('infoBox');
+  showInfoBtn.addEventListener('click', () => {
+    const isVisible = infoBox.style.display === 'block';
+    infoBox.style.display = isVisible ? 'none' : 'block';
+    showInfoBtn.setAttribute('aria-expanded', !isVisible);
+    showInfoBtn.textContent = isVisible ? 'Show About Veterans First Time Farmers' : 'Hide About Veterans First Time Farmers';
+  });
+  // Countdown Timer / Alarm
+  let timerInterval;
+  const timerDisplay = document.getElementById('timer');
+  const startTimerBtn = document.getElementById('startTimerBtn');
+  function startTimer(duration) {
+    let time = duration;
+    timerDisplay.textContent = formatTime(time);
+    clearInterval(timerInterval);
+    timerInterval = setInterval(() => {
+      time--;
+      timerDisplay.textContent = formatTime(time);
+      if(time <= 0) {
+        clearInterval(timerInterval);
+        alert('Timer finished!');
+      }
+    }, 1000);
+  }
+  function formatTime(seconds) {
+    const min = Math.floor(seconds / 60).toString().padStart(2, '0');
+    const sec = (seconds % 60).toString().padStart(2, '0');
+    return `${min}:${sec}`;
+  }
+  startTimerBtn.addEventListener('click', () => startTimer(10));
+  // Slideshow functionality
+  let slideIndex = 0;
+  const slides = document.getElementsByClassName('mySlides');
+  const dots = document.getElementsByClassName('dot');
+  const prevBtn = document.querySelector('.prev');
+  const nextBtn = document.querySelector('.next');
+  showSlides(slideIndex);
+  function showSlides(n) {
+    if (n >= slides.length) { slideIndex = 0; }
+    else if (n < 0) { slideIndex = slides.length - 1; }
+    else { slideIndex = n; }
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = 'none';
+      dots[i].classList.remove('active');
+      dots[i].setAttribute('aria-selected', 'false');
+      dots[i].setAttribute('tabindex', '-1');
+    }
+    slides[slideIndex].style.display = 'block';
+    dots[slideIndex].classList.add('active');
+    dots[slideIndex].setAttribute('aria-selected', 'true');
+    dots[slideIndex].setAttribute('tabindex', '0');
+  }
+  prevBtn.addEventListener('click', () => {
+    showSlides(slideIndex - 1);
+  });
+  nextBtn.addEventListener('click', () => {
+    showSlides(slideIndex + 1);
+  });
+  // Click dots to navigate
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].addEventListener('click', () => {
+      showSlides(i);
+    });
+    dots[i].addEventListener('keydown', (e) => {
+      if(e.key === 'Enter' || e.key === ' ') {
+        showSlides(i);
+      }
+    });
+  }
+  </script>
 
+</body>
 </html>
