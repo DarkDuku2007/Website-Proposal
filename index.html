@@ -222,7 +222,6 @@
     .next {
       right: 0;
       border-radius: 3px 0 0 3px;
-    }
     .prev:hover, .next:hover {
       background-color: #f4ae42;
       color: #222;
@@ -244,6 +243,66 @@
       border-radius: 50%;
       display: inline-block;
       transition: background-color 0.6s ease;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #333;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    textarea,
+    select {
+      width: calc(100% - 22px); 
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+      box-sizing: border-box; 
+    }
+    textarea {
+      resize: vertical; /* Allow vertical resizing */
+      min-height: 80px;
+    }
+    input[type="checkbox"],
+    input[type="radio"] {
+      margin-right: 8px;
+    }
+    /* Submit button styling */
+    button[type="submit"] {
+      display: block;
+      width: 100%;
+      padding: 12px 20px;
+      background-color: #2f6f4e;
+      color: white;
+
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 20px;
+    }
+    button[type="submit"]:hover {
+      background-color: #f4ae42;
+      color: #222;
+    }
+    /* Confirmation message styling */
+    .confirmationMessage {
+      margin-top: 25px;
+      padding: 15px;
+      background-color: #d4edda; /* Light green for success */
+      color: #155724; /* Darker green text */
+      border: 1px solid #c3e6cb;
+      border-radius: 5px;
+      text-align: center;
+      font-weight: 600;
+      display: none; /* Hidden by default */
+      
     }
     .active, .dot:hover {
       background-color: #2f6f4e;
@@ -407,10 +466,170 @@
     dots[i].addEventListener('keydown', (e) => {
       if(e.key === 'Enter' || e.key === ' ') {
         showSlides(i);
+      
+      
       }
     });
   }
   </script>
+
+</body>
+<div class="container">
+    <h1>Veteran Farmer Information Hub</h1>
+    <p>We are collecting information to better support first-time veteran farmers. Please complete the relevant sections below.</p>
+    <!-- Contact Form Section -->
+    <h2>Contact Us</h2>
+    <p>Have questions or need more information? Fill out the form below to get in touch ((2)) ((3)).</p>
+    <form id="contactForm">
+      <div class="form-group">
+        <label for="contactName">Full Name:</label>
+        <input type="text" id="contactName" name="contactName" required aria-required="true" />
+      </div>
+      <div class="form-group">
+        <label for="contactEmail">Email Address:</label>
+        <input type="email" id="contactEmail" name="contactEmail" required aria-required="true" />
+      </div>
+      <div class="form-group">
+        <label for="contactSubject">Subject:</label>
+        <input type="text" id="contactSubject" name="contactSubject" required aria-required="true" />
+      </div>
+      <div class="form-group">
+        <label for="contactMessage">Your Message:</label>
+        <textarea id="contactMessage" name="contactMessage" rows="5" required aria-required="true"></textarea>
+      </div>
+      <button type="submit">Send Message</button>
+    </form>
+    <div id="contactConfirmation" class="confirmationMessage">
+      Thank you for your message! We have received it and will respond shortly.
+    </div>
+    <!-- Registration Form Section -->
+    <h2>Farmer Veteran Registration</h2>
+    <p>Please complete this form to register with our program ((8)) ((10)). Questions marked with a red asterisk are required for successful submission ((11)).</p>
+    <form id="registrationForm">
+      <div class="form-group">
+        <label for="regFullName">Full Name: <span style="color: red;">*</span></label>
+        <input type="text" id="regFullName" name="regFullName" required aria-required="true" />
+      </div>
+      <div class="form-group">
+        <label for="regEmail">Email Address: <span style="color: red;">*</span></label>
+        <input type="email" id="regEmail" name="regEmail" required aria-required="true" />
+      </div>
+      <div class="form-group">
+        <label for="regPhone">Phone Number (e.g., 123-456-7890) ((19)):</label>
+        <input type="tel" id="regPhone" name="regPhone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" />
+      </div>
+      <div class="form-group">
+        <label for="serviceBranchReg">Branch of Service: <span style="color: red;">*</span></label>
+        <select id="serviceBranchReg" name="serviceBranchReg" required aria-required="true">
+          <option value="">-- Please Select --</option>
+          <option value="Army">Army</option>
+          <option value="Navy">Navy</option>
+          <option value="Air Force">Air Force</option>
+          <option value="Marines">Marine Corps</option>
+          <option value="Coast Guard">Coast Guard</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="veteranStatus">Are you a veteran or military member? ((30)) <span style="color: red;">*</span></label>
+        <div>
+          <input type="radio" id="veteranYes" name="veteranStatus" value="yes" required />
+          <label for="veteranYes" style="display: inline;">Yes</label>
+          <input type="radio" id="veteranNo" name="veteranStatus" value="no" />
+          <label for="veteranNo" style="display: inline;">No</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="agriInvolvement">Are you currently involved in agriculture? ((48)) <span style="color: red;">*</span></label>
+        <div>
+          <input type="radio" id="agriYes" name="agriInvolvement" value="yes" required />
+          <label for="agriYes" style="display: inline;">Yes</label>
+          <input type="radio" id="agriNo" name="agriInvolvement" value="no" />
+          <label for="agriNo" style="display: inline;">No</label>
+        </div>
+      </div>
+      <button type="submit">Complete Registration</button>
+    </form>
+    <div id="registrationConfirmation" class="confirmationMessage">
+      Registration successful! Welcome to the Farmer Veteran Coalition.
+    </div>
+    <!-- Survey Form Section -->
+    <h2>Veteran Farmer Survey</h2>
+    <p>Your feedback helps us improve our programs and resources for veteran farmers ((394)) ((395)).</p>
+    <form id="surveyForm">
+      <div class="form-group">
+        <label for="surveyName">Your Name:</label>
+        <input type="text" id="surveyName" name="surveyName" required aria-required="true" />
+      </div>
+      <div class="form-group">
+        <label for="surveyEmail">Your Email:</label>
+        <input type="email" id="surveyEmail" name="surveyEmail" required aria-required="true" />
+      </div>
+      <div class="form-group">
+        <label>What types of farming activities are you most interested in? (Select all that apply):</label>
+        <div>
+          <input type="checkbox" id="cropFarming" name="farmingInterest" value="crop_farming" />
+          <label for="cropFarming" style="display: inline;">Crop Farming</label><br />
+          <input type="checkbox" id="livestock" name="farmingInterest" value="livestock" />
+          <label for="livestock" style="display: inline;">Livestock</label><br />
+          <input type="checkbox" id="organicFarming" name="farmingInterest" value="organic_farming" />
+          <label for="organicFarming" style="display: inline;">Organic Farming</label><br />
+          <input type="checkbox" id="agritourism" name="farmingInterest" value="agritourism" />
+          <label for="agritourism" style="display: inline;">Agritourism</label><br />
+          <input type="checkbox" id="otherFarming" name="farmingInterest" value="other" />
+          <label for="otherFarming" style="display: inline;">Other (Please specify below)</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="otherFarmingSpecify">If "Other," please specify:</label>
+        <input type="text" id="otherFarmingSpecify" name="otherFarmingSpecify" />
+      </div>
+      <div class="form-group">
+        <label for="programRating">How would you rate the usefulness of veteran farming programs?</label>
+        <select id="programRating" name="programRating" required aria-required="true">
+          <option value="">-- Select a rating --</option>
+          <option value="excellent">Excellent</option>
+          <option value="good">Good</option>
+          <option value="average">Average</option>
+          <option value="poor">Poor</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="additionalFeedback">Any additional comments or suggestions?</label>
+        <textarea id="additionalFeedback" name="additionalFeedback" rows="4"></textarea>
+      </div>
+      <button type="submit">Submit Survey</button>
+    </form>
+    <div id="surveyConfirmation" class="confirmationMessage">
+      Thank you for completing our survey! Your feedback is valuable.
+    </div>
+  </div>
+  <script>
+    function handleFormSubmission(formId, confirmationId) {
+      const form = document.getElementById(formId);
+      const confirmationMessage = document.getElementById(confirmationId);
+      form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission behavior
+        // In a real application, you would send this data to a server here.
+        // For demonstration purposes, we just log to console and show message.
+        console.log(`Form ${formId} Submitted!`);
+        // Display the confirmation message
+        <light>confirmationMessage.style.display = 'block'; </light>
+        // Optionally, clear the form fields after submission
+        form.reset();
+        // Optional: Hide the message after a few seconds
+        setTimeout(() => {
+          confirmationMessage.style.display = 'none';
+        }, 5000); // Hide after 5 seconds
+      });
+    }
+    // Initialize submission handling for each form
+    handleFormSubmission('contactForm', 'contactConfirmation');
+    handleFormSubmission('registrationForm', 'registrationConfirmation');
+    handleFormSubmission('surveyForm', 'surveyConfirmation');
+
+  </script>
+
 
 </body>
 </html>
