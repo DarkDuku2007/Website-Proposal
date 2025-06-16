@@ -27,9 +27,146 @@
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    h1 {
+    .container {
+      max-width: 850px;
+      margin: 30px auto;
+      padding: 25px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+
+    }
+    h1, h2, h3 {
+      font-family: 'Merriweather', serif;
+      color: #2f6f4e
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    h2 {
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 10px;
+      margin-top: 40px;
+    }
+    /* Story Card Styles */
+    .story-card {
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Center content horizontally */
+      text-align: center;
+    }
+    .story-card img {
+      max-width: 100%;
+      height: 250px; /* Fixed height for consistency */
+      width: 100%; /* Make image take full width of its container */
+      object-fit: cover; /* Crop image to fit */
+      border-radius: 6px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .story-card h3 {
+      color: #333;
       margin-top: 0;
-      color: #2e7d32;
+      margin-bottom: 10px;
+    }
+    .story-card p {
+      margin-bottom: 10px;
+      color: #555a43;
+    }
+    .story-meta {
+      font-size: 0.9em;
+      color: #888;
+      margin-top: 15px;
+      font-style: italic;
+    }
+    /* Community Response Form */
+    .response-form {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #333;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: calc(100% - 22px);
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    button[type="submit"] {
+      display: block;
+      width: 100%;
+      padding: 12px 20px;
+      background-color: #2f6f4e;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 20px;
+    }
+    button[type="submit"]:hover {
+      background-color: #f4ae42;
+      color: #222;
+    }
+    /* Confirmation message */
+    #responseConfirmation {
+      margin-top: 25px;
+      padding: 15px;
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+      border-radius: 5px;
+      text-align: center;
+      font-weight: 600;
+      display: none;
+      aria-live: polite;
+    }
+    /* Existing Responses/Testimonials */
+    .community-response {
+      background-color: #f0f8f0; /* Lighter green tint */
+      border: 1px solid #cce8cc;
+      border-left: 5px solid #2f6f4e; /* Accent border */
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    .response-header {
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #2f6f4e;
+    }
+    .response-text {
+      color: #555a43;
+      margin-bottom: 5px;
+    }
+    .response-date {
+      font-size: 0.85em;
+      color: #777;
+      text-align: right;
     }
     p {
       font-size: 1.1em;
@@ -92,5 +229,84 @@
       Join us as we cultivate hope, growth, and new beginnings for those who have served our country. Together, we grow futures rooted in the soil – and in community.
     </p>
   </main>
+</body>
+
+
+<div class="container">
+    <h1>Veteran Farmer Stories & Community Responses</h1>
+    <p style="text-align: center; margin-bottom: 30px;">Hear inspiring journeys from veterans who found new purpose in farming, and share your own thoughts or support.</p>
+    <h2>Our Veteran Farmer Stories</h2>
+    <div class="story-card">
+      <img src="https://via.placeholder.com/600x250/8BC34A/FFFFFF?text=Veteran+Farmer+Story+1" alt="Veteran Farmer cultivating crops" />
+      <h3>From Service to Soil: John's Organic Farm</h3>
+      <p>John, a retired Army veteran, transitioned from military service to a passion for sustainable agriculture. His organic farm now supplies fresh produce to local restaurants and farmers markets. He attributes his success to the discipline learned in the military and the support from fellow veteran farmers.</p>
+      <div class="story-meta">Shared by John D. | Est. 2020 | Organic Produce</div>
+    </div>
+    <div class="story-card">
+      <img src="https://via.placeholder.com/600x250/C6E7B8/FFFFFF?text=Veteran+Farmer+Story+2" alt="Veteran couple managing livestock" />
+      <h3>The Smith Family Ranch: Healing Through Ranching</h3>
+      <p>Sarah and Mike, both Navy veterans, found healing and a new mission in raising livestock on their ranch. They emphasize humane practices and community engagement, offering workshops to other veterans interested in animal husbandry.</p>
+      <div class="story-meta">Shared by Sarah & Mike S. | Est. 2021 | Grass-fed Livestock</div>
+    </div>
+
+    <div class="story-card">
+      <img src="https://via.placeholder.com/600x250/A3C293/FFFFFF?text=Veteran+Farmer+Story+3" alt="Veteran teaching permaculture techniques" />
+      <h3>Cultivating Community: Maria's Permaculture Project</h3>
+      <p>Maria, an Air Force veteran, is dedicated to permaculture and educating her community. Her urban farm serves as a training ground for aspiring farmers and a hub for food security initiatives, demonstrating the power of sustainable design.</p>
+      <div class="story-meta">Shared by Maria L. | Est. 2022 | Urban Permaculture</div>
+    </div>
+    <h2>Community Responses & Testimonials</h2>
+    <!-- Existing Community Responses (for demonstration) -->
+    <div class="community-response">
+      <div class="response-header">"Incredibly inspiring!" - Jessica R.</div>
+      <div class="response-text">"It's wonderful to see veterans finding peace and purpose in farming. These stories truly motivate me!"</div>
+      <div class="response-date">April 10, 2025</div>
+    </div>
+    <div class="community-response">
+      <div class="response-header">"Great initiative!" - Veteran Supporter</div>
+      <div class="response-text">"As a fellow veteran, I deeply appreciate the dedication and hard work showcased here. I'm looking into starting my own small plot now."</div>
+      <div class="response-date">April 05, 2025</div>
+    </div>
+    <!-- Form for Community Responses -->
+    <h2>Share Your Thoughts or Support</h2>
+    <p>We'd love to hear from you! Please share your feedback, support, or testimonials below.</p>
+    <form id="communityResponseForm" class="response-form">
+      <div class="form-group">
+        <label for="responderName">Your Name:</label>
+        <input type="text" id="responderName" name="responderName" required aria-required="true" />
+      </div>
+      <div class="form-group">
+        <label for="responderEmail">Your Email (will not be published):</label>
+        <input type="email" id="responderEmail" name="responderEmail" required aria-required="true" />
+      </div>
+      <div class="form-group">
+        <label for="responseMessage">Your Message/Testimonial:</label>
+        <textarea id="responseMessage" name="responseMessage" rows="6" placeholder="Share your thoughts here..." required aria-required="true"></textarea>
+      </div>
+      <button type="submit">Submit Response</button>
+    </form>
+    <div id="responseConfirmation" class="confirmationMessage">
+      Thank you for your valuable response! Your message has been submitted.
+    </div>
+  </div>
+  <script>
+    const communityResponseForm = document.getElementById('communityResponseForm');
+    const responseConfirmation = document.getElementById('responseConfirmation');
+    communityResponseForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default form submission
+      // In a real application, this data would be sent to a server.
+      // For this demo, we simulate success and log to console.
+      console.log('Community Response Form Submitted!');
+      // Display the confirmation message
+      responseConfirmation.style.display = 'block';
+      // Optionally, clear the form fields
+      communityResponseForm.reset();
+      // Hide message after 5 seconds
+      setTimeout(() => {
+        responseConfirmation.style.display = 'none';
+      }, 5000);
+    });
+  </script>
+
 </body>
 </html>
