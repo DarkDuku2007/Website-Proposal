@@ -2,7 +2,7 @@ public class Clock {
     private int hours;
     private int minutes;
     private int seconds;
-
+    }
     // Default constructor
     public Clock() {
         this.hours = 0;
@@ -46,5 +46,274 @@ public class Clock {
     // Print time in hh:mm:ss format
     public void printTime() {
         System.out.printf("%02d:%02d:%02d\n", hours, minutes, seconds);
+   
+        public class ClockChild extends Clock {
+
+    /**
+
+     * Default constructor for ClockChild.
+
+     * Calls the parent's (Clock's) default constructor, initializing time to 00:00:00.
+
+     */
+
+    public ClockChild() {
+
+        super(); // Calls the default constructor of the parent Clock class
+
     }
+
+    /**
+
+     * Overloaded constructor for ClockChild.
+
+     * Takes hours, minutes, and seconds, and calls the parent's overloaded constructor
+
+     * to set these member variables.
+
+     *
+
+     * @param hours   The initial hour (0-23).
+
+     * @param minutes The initial minute (0-59).
+
+     * @param seconds The initial second (0-59).
+
+     */
+
+    public ClockChild(int hours, int minutes, int seconds) {
+
+        super(hours, minutes, seconds); // Calls the overloaded constructor of the parent Clock class
+
+    }
+
+    /**
+
+     * Prints the time in either 12-hour (normal) or 24-hour (military) format.
+
+     *
+
+     * @param typeOfClock An integer; 12 for 12-hour format (e.g., 09:09am, 11:30pm)
+
+     *                    or 24 for 24-hour format (e.g., 03:13:09).
+
+     */
+
+    public void printTime(int typeOfClock) {
+
+        if (typeOfClock == 24) {
+
+            // Call the parent's printTime method for military time
+
+            super.printTime();
+
+        } else if (typeOfClock == 12) {
+
+            int hours = getHours();     // Access parent's hours
+
+            int minutes = getMinutes(); // Access parent's minutes
+
+            String amPm = "am";
+
+            if (hours >= 12) {
+
+                amPm = "pm";
+
+            }
+
+            int displayHours = hours;
+
+            if (hours == 0) {
+
+                displayHours = 12; // 00:xx becomes 12:xx am
+
+            } else if (hours > 12) {
+
+                displayHours = hours - 12; // e.g., 13:xx becomes 01:xx pm
+
+            }
+
+            // Print in 12-hour format (e.g., 09:09am, 11:30pm)
+
+            // Note: Seconds are not typically shown in this 12-hour format unless specified,
+
+            // so we omit them to match the "11:30pm or 9:09am" example.
+
+            System.out.printf("%02d:%02d%s%n", displayHours, minutes, amPm);
+
+        } else {
+
+            System.out.println("Invalid typeOfClock parameter. Please use 12 or 24.");
+
+        }
+    }
+public class ClockChild extends Clock {
+
+    /**
+
+     * Default constructor for ClockChild.
+
+     * Calls the parent's (Clock's) default constructor, initializing time to 00:00:00.
+
+     */
+
+    public ClockChild() {
+
+        super(); // Calls the default constructor of the parent Clock class
+
+    }
+
+    /**
+
+     * Overloaded constructor for ClockChild.
+
+     * Takes hours, minutes, and seconds, and calls the parent's overloaded constructor
+
+     * to set these member variables.
+
+     *
+
+     * @param hours   The initial hour (0-23).
+
+     * @param minutes The initial minute (0-59).
+
+     * @param seconds The initial second (0-59).
+
+     */
+
+    public ClockChild(int hours, int minutes, int seconds) {
+
+        super(hours, minutes, seconds); // Calls the overloaded constructor of the parent Clock class
+
+    }
+
+    /**
+
+     * Prints the time in either 12-hour (normal) or 24-hour (military) format.
+
+     *
+
+     * @param typeOfClock An integer; 12 for 12-hour format (e.g., 09:09am, 11:30pm)
+
+     *                    or 24 for 24-hour format (e.g., 03:13:09).
+
+     */
+
+    public void printTime(int typeOfClock) {
+
+        if (typeOfClock == 24) {
+
+            // Call the parent's printTime method for military time
+
+            super.printTime();
+
+        } else if (typeOfClock == 12) {
+
+            int hours = getHours();     // Access parent's hours
+
+            int minutes = getMinutes(); // Access parent's minutes
+
+            String amPm = "am";
+
+            if (hours >= 12) {
+
+                amPm = "pm";
+
+            }
+
+            int displayHours = hours;
+
+            if (hours == 0) {
+
+                displayHours = 12; // 00:xx becomes 12:xx am
+
+            } else if (hours > 12) {
+
+                displayHours = hours - 12; // e.g., 13:xx becomes 01:xx pm
+
+            }
+
+            // Print in 12-hour format (e.g., 09:09am, 11:30pm)
+
+            // Note: Seconds are not typically shown in this 12-hour format unless specified,
+
+            // so we omit them to match the "11:30pm or 9:09am" example.
+
+            System.out.printf("%02d:%02d%s%n", displayHours, minutes, amPm);
+
+        } else {
+
+            System.out.println("Invalid typeOfClock parameter. Please use 12 or 24.");
+
+        }
+
+    }
+
+    // Optional: An example main method to test the ClockChild class
+
+    public static void main(String[] args) {
+
+        // Using the default constructor of ClockChild
+
+        ClockChild childClock1 = new ClockChild();
+
+        System.out.print("Child Clock 1 (default, 24-hr): ");
+
+        childClock1.printTime(24); // Expected: 00:00:00
+
+        System.out.print("Child Clock 1 (default, 12-hr): ");
+
+        childClock1.printTime(12); // Expected: 12:00am
+
+        System.out.println("---");
+
+        // Using the overloaded constructor of ClockChild
+
+        ClockChild childClock2 = new ClockChild(15, 30, 45); // Sets 15:30:45
+
+        System.out.print("Child Clock 2 (15:30:45, 24-hr): ");
+
+        childClock2.printTime(24); // Expected: 15:30:45
+
+        System.out.print("Child Clock 2 (15:30:45, 12-hr): ");
+
+        childClock2.printTime(12); // Expected: 03:30pm
+
+        System.out.println("---");
+
+        ClockChild childClock3 = new ClockChild(9, 9, 5); // Sets 09:09:05
+
+        System.out.print("Child Clock 3 (09:09:05, 24-hr): ");
+
+        childClock3.printTime(24); // Expected: 09:09:05
+
+        System.out.print("Child Clock 3 (09:09:05, 12-hr): ");
+
+        childClock3.printTime(12); // Expected: 09:09am
+
+        System.out.println("---");
+
+        ClockChild childClock4 = new ClockChild(23, 59, 0); // Sets 23:59:00
+
+        System.out.print("Child Clock 4 (23:59:00, 24-hr): ");
+
+        childClock4.printTime(24); // Expected: 23:59:00
+
+        System.out.print("Child Clock 4 (23:59:00, 12-hr): ");
+
+        childClock4.printTime(12); // Expected: 11:59pm
+
+        System.out.println("---");
+
+        // Test invalid typeOfClock
+
+        childClock1.printTime(10); // Expected: Invalid message
+
+    }
+
 }
+
+
+        
+
+    
