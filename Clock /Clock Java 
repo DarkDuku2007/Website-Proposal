@@ -1,0 +1,50 @@
+public class Clock {
+    private int hours;
+    private int minutes;
+    private int seconds;
+
+    // Default constructor
+    public Clock() {
+        this.hours = 0;
+        this.minutes = 0;
+        this.seconds = 0;
+    }
+    // Overloaded constructor
+    public Clock(int hours, int minutes, int seconds) {
+        setTime(hours, minutes, seconds);
+    }
+    // Set the time
+    public void setTime(int hours, int minutes, int seconds) {
+        if (hours >= 0 && hours < 24) {
+            this.hours = hours;
+        } else {
+            this.hours = 0;
+        }
+        if (minutes >= 0 && minutes < 60) {
+            this.minutes = minutes;
+        } else {
+            this.minutes = 0;
+        }
+        if (seconds >= 0 && seconds < 60) {
+            this.seconds = seconds;
+        } else {
+            this.seconds = 0;
+        }
+    }
+    // Get hours
+    public int getHours() {
+        return hours;
+    }
+    // Get minutes
+    public int getMinutes() {
+        return minutes;
+    }
+    // Get seconds
+    public int getSeconds() {
+        return seconds;
+    }
+    // Print time in hh:mm:ss format
+    public void printTime() {
+        System.out.printf("%02d:%02d:%02d\n", hours, minutes, seconds);
+    }
+}
