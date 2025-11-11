@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DevOps Demons Login</title>
+
+    <style>
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            background-color: #f4f4f4;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            min-height: 100vh;
+
+            margin: 0;
+
+        }
+
+        .login-container {
+
+            background-color: #fff;
+
+            padding: 40px;
+
+            border-radius: 8px;
+
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
+            text-align: center;
+
+            width: 350px;
+
+        }
+
+        .logo {
+
+            margin-bottom: 30px;
+
+        }
+
+        .logo img {
+
+            max-width: 150px;
+
+            height: auto;
+
+        }
+
+        h2 {
+
+            color: #333;
+
+            margin-bottom: 25px;
+
+        }
+
+        .input-group {
+
+            margin-bottom: 20px;
+
+            text-align: left;
+
+        }
+
+        .input-group label {
+
+            display: block;
+
+            margin-bottom: 8px;
+
+            color: #555;
+
+            font-weight: bold;
+
+        }
+
+        .input-group input[type="text"],
+
+        .input-group input[type="password"] {
+
+            width: calc(100% - 20px);
+
+            padding: 12px 10px;
+
+            border: 1px solid #ddd;
+
+            border-radius: 5px;
+
+            font-size: 16px;
+
+        }
+
+        .input-group input[type="text"]:focus,
+
+        .input-group input[type="password"]:focus {
+
+            border-color: #007bff;
+
+            outline: none;
+
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+
+        }
+
+        .login-button {
+
+            background-color: #007bff;
+
+            color: #fff;
+
+            padding: 12px 25px;
+
+            border: none;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+
+            font-size: 17px;
+
+            width: 100%;
+
+            transition: background-color 0.3s ease;
+
+        }
+
+        .login-button:hover {
+
+            background-color: #0056b3;
+
+        }
+
+        .links {
+
+            margin-top: 25px;
+
+            font-size: 14px;
+
+        }
+
+        .links a {
+
+            color: #007bff;
+
+            text-decoration: none;
+
+            margin: 0 10px;
+
+            transition: color 0.3s ease;
+
+        }
+
+        .links a:hover {
+
+            color: #0056b3;
+
+            text-decoration: underline;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <div class="logo">
+
+            <!-- Replace 'devops-demons-logo.png' with the actual path to your logo image -->
+
+            <img src="devops-demons-logo.png" alt="DevOps Demons Logo">
+
+        </div>
+
+        <h2>Welcome Back!</h2>
+
+        <form action="#" method="POST">
+
+            <div class="input-group">
+
+                <label for="username">Username</label>
+
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+            </div>
+
+            <div class="input-group">
+
+                <label for="password">Password</label>
+
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+            </div>
+
+            <button type="submit" class="login-button">Login</button>
+
+        </form>
+
+        <div class="links">
+
+            <a href="forgot-password.html">Forgot Password?</a>
+
+            <a href="register.html">Register</a>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
