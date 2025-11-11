@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Supply Chain Management Home</title>
+
+    <style>
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            margin: 0;
+
+            padding: 0;
+
+            background-color: #f4f4f4;
+
+            color: #333;
+
+        }
+
+        header {
+
+            background-color: #2c3e50;
+
+            color: white;
+
+            padding: 1.5em 0;
+
+            text-align: center;
+
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+        }
+
+        h1 {
+
+            margin: 0;
+
+            font-size: 2.5em;
+
+        }
+
+        nav {
+
+            background-color: #34495e;
+
+            padding: 1em 0;
+
+            text-align: center;
+
+        }
+
+        nav a {
+
+            color: white;
+
+            text-decoration: none;
+
+            padding: 10px 20px;
+
+            margin: 0 5px;
+
+            border-radius: 5px;
+
+            transition: background-color 0.3s ease;
+
+        }
+
+        nav a:hover {
+
+            background-color: #2c3e50;
+
+        }
+
+        .container {
+
+            width: 90%;
+
+            max-width: 1200px;
+
+            margin: 30px auto;
+
+            background-color: white;
+
+            padding: 30px;
+
+            border-radius: 8px;
+
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+
+        }
+
+        h2 {
+
+            color: #2c3e50;
+
+            border-bottom: 2px solid #e0e0e0;
+
+            padding-bottom: 10px;
+
+            margin-top: 30px;
+
+        }
+
+        form {
+
+            background-color: #f9f9f9;
+
+            padding: 20px;
+
+            border-radius: 5px;
+
+            margin-bottom: 20px;
+
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+
+        }
+
+        form label {
+
+            display: block;
+
+            margin-bottom: 5px;
+
+            font-weight: bold;
+
+            color: #555;
+
+        }
+
+        form input[type="text"],
+
+        form input[type="email"],
+
+        form input[type="tel"],
+
+        form input[type="number"],
+
+        form input[type="date"],
+
+        form input[type="password"],
+
+        form textarea,
+
+        form select {
+
+            width: calc(100% - 22px);
+
+            padding: 10px;
+
+            margin-bottom: 15px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 4px;
+
+            box-sizing: border-box;
+
+        }
+
+        form button {
+
+            background-color: #3498db;
+
+            color: white;
+
+            padding: 12px 20px;
+
+            border: none;
+
+            border-radius: 4px;
+
+            cursor: pointer;
+
+            font-size: 1em;
+
+            transition: background-color 0.3s ease;
+
+        }
+
+        form button:hover {
+
+            background-color: #2980b9;
+
+        }
+
+        footer {
+
+            text-align: center;
+
+            padding: 25px;
+
+            background-color: #2c3e50;
+
+            color: white;
+
+            margin-top: 40px;
+
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+
+        }
+
+        footer a {
+
+            color: #92b8d8;
+
+            text-decoration: none;
+
+            margin: 0 15px;
+
+            transition: color 0.3s ease;
+
+        }
+
+        footer a:hover {
+
+            color: white;
+
+        }
+
+        .registration-links {
+
+            text-align: center;
+
+            margin-bottom: 30px;
+
+        }
+
+        .registration-links a {
+
+            display: inline-block;
+
+            background-color: #2ecc71;
+
+            color: white;
+
+            padding: 10px 20px;
+
+            text-decoration: none;
+
+            border-radius: 5px;
+
+            margin: 0 10px;
+
+            transition: background-color 0.3s ease;
+
+        }
+
+        .registration-links a:hover {
+
+            background-color: #27ae60;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+
+        <h1>Supply Chain Management System</h1>
+
+    </header>
+
+    <nav>
+
+        <a href="#data-entry">Data Entry</a>
+
+        <a href="#register-supplier">Register Supplier</a>
+
+        <a href="#register-customer">Register Customer</a>
+
+        <a href="#supplier">Supplier</a>
+
+        <a href="#warehouse">Warehouse</a>
+
+        <a href="#product">Product</a>
+
+        <a href="#inventory">Inventory</a>
+
+        <a href="#order">Order</a>
+
+        <a href="#order_detail">Order Detail</a>
+
+        <a href="#forecast">Forecast</a>
+
+        <a href="#shipment">Shipment</a>
+
+        <a href="#customer">Customer</a>
+
+    </nav>
+
+    <div class="container">
+
+        <h2 id="register">Registration</h2>
+
+        <div class="registration-links">
+
+            <a href="#register-supplier">Register as a Supplier</a>
+
+            <a href="#register-customer">Register as a Customer</a>
+
+        </div>
+
+        <!-- Supplier Registration Form -->
+
+        <section id="register-supplier">
+
+            <h3>Supplier Registration</h3>
+
+            <form action="#" method="post">
+
+                <label for="reg_supplier_name">Company Name:</label>
+
+                <input type="text" id="reg_supplier_name" name="reg_supplier_name" required>
+
+                <label for="reg_contact_person">Contact Person:</label>
+
+                <input type="text" id="reg_contact_person" name="reg_contact_person" required>
+
+                <label for="reg_supplier_email">Email:</label>
+
+                <input type="email" id="reg_supplier_email" name="reg_supplier_email" required>
+
+                <label for="reg_supplier_phone">Phone:</label>
+
+                <input type="tel" id="reg_supplier_phone" name="reg_supplier_phone" required>
+
+                <label for="reg_supplier_address">Address:</label>
+
+                <textarea id="reg_supplier_address" name="reg_supplier_address" rows="3" required></textarea>
+
+                <label for="reg_supplier_password">Password:</label>
+
+                <input type="password" id="reg_supplier_password" name="reg_supplier_password" required>
+
+                <label for="reg_supplier_confirm_password">Confirm Password:</label>
+
+                <input type="password" id="reg_supplier_confirm_password" name="reg_supplier_confirm_password" required>
+
+                <button type="submit">Register as Supplier</button>
+
+            </form>
+
+        </section>
+
+        <!-- Customer Registration Form -->
+
+        <section id="register-customer">
+
+            <h3>Customer Registration</h3>
+
+            <form action="#" method="post">
+
+                <label for="reg_customer_name">Your Name:</label>
+
+                <input type="text" id="reg_customer_name" name="reg_customer_name" required>
+
+                <label for="reg_customer_email">Email:</label>
+
+                <input type="email" id="reg_customer_email" name="reg_customer_email" required>
+
+                <label for="reg_customer_phone">Phone:</label>
+
+                <input type="tel" id="reg_customer_phone" name="reg_customer_phone">
+
+                <label for="reg_customer_address">Address:</label>
+
+                <textarea id="reg_customer_address" name="reg_customer_address" rows="3"></textarea>
+
+                <label for="reg_customer_password">Password:</label>
+
+                <input type="password" id="reg_customer_password" name="reg_customer_password" required>
+
+                <label for="reg_customer_confirm_password">Confirm Password:</label>
+
+                <input type="password" id="reg_customer_confirm_password" name="reg_customer_confirm_password" required>
+
+                <button type="submit">Register as Customer</button>
+
+            </form>
+
+        </section>
+
+        <h2 id="data-entry">Data Entry Forms</h2>
+
+        <!-- Supplier Form -->
+
+        <section id="supplier">
+
+            <h3>Add New Supplier (Admin Only)</h3>
+
+            <form action="#" method="post">
+
+                <label for="supplier_id">Supplier ID (PK):</label>
+
+                <input type="text" id="supplier_id" name="supplier_id" required>
+
+                <label for="supplier_name">Supplier Name:</label>
+
+                <input type="text" id="supplier_name" name="supplier_name" required>
+
+                <label for="contact_name">Contact Name:</label>
+
+                <input type="text" id="contact_name" name="contact_name">
+
+                <label for="supplier_email">Email:</label>
+
+                <input type="email" id="supplier_email" name="supplier_email">
+
+                <label for="supplier_phone">Phone:</label>
+
+                <input type="tel" id="supplier_phone" name="supplier_phone">
+
+                <label for="supplier_address">Address:</label>
+
+                <textarea id="supplier_address" name="supplier_address" rows="3"></textarea>
+
+                <label for="delivery_time_avg">Average Delivery Time (Days):</label>
+
+                <input type="number" id="delivery_time_avg" name="delivery_time_avg" min="0">
+
+                <label for="defect_rate">Defect Rate (%):</label>
+
+                <input type="number" id="defect_rate" name="defect_rate" step="0.01" min="0" max="100">
+
+                <button type="submit">Add Supplier</button>
+
+            </form>
+
+        </section>
+
+        <!-- Warehouse Form -->
+
+        <section id="warehouse">
+
+            <h3>Add New Warehouse</h3>
+
+            <form action="#" method="post">
+
+                <label for="warehouse_id">Warehouse ID (PK):</label>
+
+                <input type="text" id="warehouse_id" name="warehouse_id" required>
+
+                <label for="warehouse_name">Warehouse Name:</label>
+
+                <input type="text" id="warehouse_name" name="warehouse_name" required>
+
+                <label for="location">Location:</label>
+
+                <input type="text" id="location" name="location">
+
+                <label for="capacity">Capacity:</label>
+
+                <input type="text" id="capacity" name="capacity">
+
+                <label for="manager_name">Manager Name:</label>
+
+                <input type="text" id="manager_name" name="manager_name">
+
+                <label for="contact_number">Contact Number:</label>
+
+                <input type="tel" id="contact_number" name="contact_number">
+
+                <button type="submit">Add Warehouse</button>
+
+            </form>
+
+        </section>
+
+        <!-- Product Form -->
+
+        <section id="product">
+
+            <h3>Add New Product</h3>
+
+            <form action="#" method="post">
+
+                <label for="product_id">Product ID (PK):</label>
+
+                <input type="text" id="product_id" name="product_id" required>
+
+                <label for="product_name">Product Name:</label>
+
+                <input type="text" id="product_name" name="product_name" required>
+
+                <label for="sku">SKU:</label>
+
+                <input type="text" id="sku" name="sku">
+
+                <label for="category">Category:</label>
+
+                <input type="text" id="category" name="category">
+
+                <label for="unit_cost">Unit Cost:</label>
+
+                <input type="number" id="unit_cost" name="unit_cost" step="0.01" min="0">
+
+                <label for="unit_price">Unit Price:</label>
+
+                <input type="number" id="unit_price" name="unit_price" step="0.01" min="0">
+
+                <label for="description">Description:</label>
+
+                <textarea id="description" name="description" rows="3"></textarea>
+
+                <label for="fk_supplier_id_prod">Supplier ID (FK):</label>
+
+                <input type="text" id="fk_supplier_id_prod" name="fk_supplier_id_prod" placeholder="e.g., S001">
+
+                <!-- In a real app, this would be a dropdown populated from the Supplier table -->
+
+                <button type="submit">Add Product</button>
+
+            </form>
+
+        </section>
+
+        <!-- Inventory Form -->
+
+        <section id="inventory">
+
+            <h3>Update Inventory</h3>
+
+            <form action="#" method="post">
+
+                <label for="inventory_id">Inventory ID (PK):</label>
+
+                <input type="text" id="inventory_id" name="inventory_id" required>
+
+                <label for="fk_product_id_inv">Product ID (FK):</label>
+
+                <input type="text" id="fk_product_id_inv" name="fk_product_id_inv" placeholder="e.g., P001">
+
+                <!-- In a real app, this would be a dropdown populated from the Product table -->
+
+                <label for="fk_warehouse_id_inv">Warehouse ID (FK):</label>
+
+                <input type="text" id="fk_warehouse_id_inv" name="fk_warehouse_id_inv" placeholder="e.g., W001">
+
+                <!-- In a real app, this would be a dropdown populated from the Warehouse table -->
+
+                <label for="quantity_on_hand">Quantity On Hand:</label>
+
+                <input type="number" id="quantity_on_hand" name="quantity_on_hand" min="0">
+
+                <label for="reorder_level">Reorder Level:</label>
+
+                <input type="number" id="reorder_level" name="reorder_level" min="0">
+
+                <label for="last_updated">Last Updated:</label>
+
+                <input type="date" id="last_updated" name="last_updated">
+
+                <label for="rfid_tag">RFID Tag:</label>
+
+                <input type="text" id="rfid_tag" name="rfid_tag">
+
+                <button type="submit">Update Inventory</button>
+
+            </form>
+
+        </section>
+
+        <!-- Order Form -->
+
+        <section id="order">
+
+            <h3>Place New Order</h3>
+
+            <form action="#" method="post">
+
+                <label for="order_id">Order ID (PK):</label>
+
+                <input type="text" id="order_id" name="order_id" required>
+
+                <label for="fk_warehouse_id_ord">Warehouse ID (FK):</label>
+
+                <input type="text" id="fk_warehouse_id_ord" name="fk_warehouse_id_ord" placeholder="e.g., W001">
+
+                <!-- In a real app, this would be a dropdown populated from the Warehouse table -->
+
+                <label for="order_date">Order Date:</label>
+
+                <input type="date" id="order_date" name="order_date" required>
+
+                <label for="customer_id_ord">Customer ID (FK):</label>
+
+                <input type="text" id="customer_id_ord" name="customer_id_ord" placeholder="e.g., C001">
+
+                <!-- In a real app, this would be a dropdown populated from the Customer table -->
+
+                <label for="total_amount">Total Amount:</label>
+
+                <input type="number" id="total_amount" name="total_amount" step="0.01" min="0">
+
+                <label for="order_status">Order Status:</label>
+
+                <select id="order_status" name="order_status">
+
+                    <option value="pending">Pending</option>
+
+                    <option value="processing">Processing</option>
+
+                    <option value="shipped">Shipped</option>
+
+                    <option value="delivered">Delivered</option>
+
+                    <option value="cancelled">Cancelled</option>
+
+                </select>
+
+                <label for="shipping_date">Shipping Date:</label>
+
+                <input type="date" id="shipping_date" name="shipping_date">
+
+                <button type="submit">Create Order</button>
+
+            </form>
+
+        </section>
+
+        <!-- Order Detail Form -->
+
+        <section id="order_detail">
+
+            <h3>Add Order Detail Item</h3>
+
+            <form action="#" method="post">
+
+                <label for="order_detail_id">Order Detail ID (PK):</label>
+
+                <input type="text" id="order_detail_id" name="order_detail_id" required>
+
+                <label for="fk_order_id_od">Order ID (FK):</label>
+
+                <input type="text" id="fk_order_id_od" name="fk_order_id_od" placeholder="e.g., ORD001">
+
+                <!-- In a real app, this would be a dropdown populated from the Order table -->
+
+                <label for="fk_product_id_od">Product ID (FK):</label>
+
+                <input type="text" id="fk_product_id_od" name="fk_product_id_od" placeholder="e.g., P001">
+
+                <!-- In a real app, this would be a dropdown populated from the Product table -->
+
+                <label for="quantity_ordered">Quantity Ordered:</label>
+
+                <input type="number" id="quantity_ordered" name="quantity_ordered" min="1">
+
+                <label for="unit_price_od">Unit Price:</label>
+
+                <input type="number" id="unit_price_od" name="unit_price_od" step="0.01" min="0">
+
+                <label for="subtotal">Subtotal:</label>
+
+                <input type="number" id="subtotal" name="subtotal" step="0.01" min="0">
+
+                <button type="submit">Add Order Detail</button>
+
+            </form>
+
+        </section>
+
+        <!-- Forecast Form -->
+
+        <section id="forecast">
+
+            <h3>Create New Forecast</h3>
+
+            <form action="#" method="post">
+
+                <label for="forecast_id">Forecast ID (PK):</label>
+
+                <input type="text" id="forecast_id" name="forecast_id" required>
+
+                <label for="fk_product_id_fc">Product ID (FK):</label>
+
+                <input type="text" id="fk_product_id_fc" name="fk_product_id_fc" placeholder="e.g., P001">
+
+                <!-- In a real app, this would be a dropdown populated from the Product table -->
+
+                <label for="fk_warehouse_id_fc">Warehouse ID (FK):</label>
+
+                <input type="text" id="fk_warehouse_id_fc" name="fk_warehouse_id_fc" placeholder="e.g., W001">
+
+                <!-- In a real app, this would be a dropdown populated from the Warehouse table -->
+
+                <label for="forecast_date">Forecast Date:</label>
+
+                <input type="date" id="forecast_date" name="forecast_date" required>
+
+                <label for="predicted_demand">Predicted Demand:</label>
+
+                <input type="number" id="predicted_demand" name="predicted_demand" min="0">
+
+                <label for="confidence_level">Confidence Level (%):</label>
+
+                <input type="number" id="confidence_level" name="confidence_level" min="0" max="100">
+
+                <label for="notes_fc">Notes:</label>
+
+                <textarea id="notes_fc" name="notes_fc" rows="3"></textarea>
+
+                <button type="submit">Generate Forecast</button>
+
+            </form>
+
+        </section>
+
+        <!-- Shipment Form -->
+
+        <section id="shipment">
+
+            <h3>Record New Shipment</h3>
+
+            <form action="#" method="post">
+
+                <label for="shipment_id">Shipment ID (PK):</label>
+
+                <input type="text" id="shipment_id" name="shipment_id" required>
+
+                <label for="fk_supplier_id_ship">Supplier ID (FK):</label>
+
+                <input type="text" id="fk_supplier_id_ship" name="fk_supplier_id_ship" placeholder="e.g., S001">
+
+                <!-- In a real app, this would be a dropdown populated from the Supplier table -->
+
+                <label for="fk_warehouse_id_ship">Warehouse ID (FK):</label>
+
+                <input type="text" id="fk_warehouse_id_ship" name="fk_warehouse_id_ship" placeholder="e.g., W001">
+
+                <!-- In a real app, this would be a dropdown populated from the Warehouse table -->
+
+                <label for="shipment_type">Shipment Type:</label>
+
+                <select id="shipment_type" name="shipment_type">
+
+                    <option value="incoming">Incoming</option>
+
+                    <option value="outgoing">Outgoing</option>
+
+                </select>
+
+                <label for="shipment_date">Shipment Date:</label>
+
+                <input type="date" id="shipment_date" name="shipment_date" required>
+
+                <label for="status_ship">Status:</label>
+
+                <input type="text" id="status_ship" name="status_ship">
+
+                <label for="tracking_number">Tracking Number:</label>
+
+                <input type="text" id="tracking_number" name="tracking_number">
+
+                <button type="submit">Record Shipment</button>
+
+            </form>
+
+        </section>
+
+        <!-- Customer Form (for admin to add, separate from customer registration) -->
+
+        <section id="customer">
+
+            <h3>Add New Customer (Admin Only)</h3>
+
+            <form action="#" method="post">
+
+                <label for="customer_id">Customer ID (PK):</label>
+
+                <input type="text" id="customer_id" name="customer_id" required>
+
+                <label for="customer_name">Customer Name:</label>
+
+                <input type="text" id="customer_name" name="customer_name" required>
+
+                <label for="customer_email">Email:</label>
+
+                <input type="email" id="customer_email" name="customer_email">
+
+                <label for="customer_phone">Phone:</label>
+
+                <input type="tel" id="customer_phone" name="customer_phone">
+
+                <label for="customer_address">Address:</label>
+
+                <textarea id="customer_address" name="customer_address" rows="3"></textarea>
+
+                <label for="region">Region:</label>
+
+                <input type="text" id="region" name="region">
+
+                <button type="submit">Add Customer</button>
+
+            </form>
+
+        </section>
+
+    </div>
+
+    <footer>
+
+        <a href="#contact">Contact</a>
+
+        <a href="#about-us">About Us</a>
+
+        <a href="#services">Services</a>
+
+    </footer>
+
+    <script>
+
+        // Simple client-side JavaScript for demonstration.
+
+        // In a real application, forms would submit data to a backend.
+
+        document.querySelectorAll('form').forEach(form => {
+
+            form.addEventListener('submit', function(event) {
+
+                event.preventDefault(); // Prevent default form submission
+
+                alert('Form "' + this.querySelector('h3').textContent + '" submitted! (Data would typically be sent to a server)');
+
+                this.reset(); // Clear form fields after "submission"
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
